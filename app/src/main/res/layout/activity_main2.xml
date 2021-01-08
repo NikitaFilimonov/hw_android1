@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity2"
+    android:orientation="vertical"
+    android:padding="@dimen/padding">
+
+<!--    где использовать атрибут inputType: text, textPersonName, phone, number,
+textPassword, textEmailAddress и другие значен-->
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="@string/edit_text"
+        android:ems="30"
+        android:textColorHint="@color/purple_200"
+        android:textColor="@color/first_edit_text"
+        android:inputType="text"
+        />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="@string/edit_text"
+        android:ems="30"
+        android:textColorHint="@color/purple_200"
+        android:textColor="@color/first_edit_text"
+        android:inputType="textPersonName"
+        />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="@string/edit_text"
+        android:ems="30"
+        android:textColorHint="@color/purple_200"
+        android:textColor="@color/first_edit_text"
+        android:inputType="number"
+        />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="@string/edit_text"
+        android:ems="30"
+        android:textColorHint="@color/purple_200"
+        android:textColor="@color/first_edit_text"
+        android:inputType="phone"
+        />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="@string/edit_text"
+        android:ems="30"
+        android:textColorHint="@color/purple_200"
+        android:textColor="@color/first_edit_text"
+        android:inputType="textPassword"
+        />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="@string/edit_text"
+        android:ems="30"
+        android:textColorHint="@color/purple_200"
+        android:textColor="@color/first_edit_text"
+        android:inputType="textEmailAddress"
+        />
+
+</LinearLayout>
