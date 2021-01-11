@@ -3,4 +3,24 @@
     <string name="strings">Hello World!</string>
     <string name="edit_text">First HW Android 1</string>
     <string name="first_hw_button">First HW Button</string>
+    <string name="button_1row_1">С</string>
+    <string name="button_1row_2">()</string>
+    <string name="button_1row_3">%</string>
+    <string name="button_1row_4">/</string>
+    <string name="button_2row_1">7</string>
+    <string name="button_2row_2">8</string>
+    <string name="button_2row_3">9</string>
+    <string name="button_2row_4">*</string>
+    <string name="button_3row_1">4</string>
+    <string name="button_3row_3">5</string>
+    <string name="button_3row_2">6</string>
+    <string name="button_3row_4">-</string>
+    <string name="button_4row_1">1</string>
+    <string name="button_4row_2">2</string>
+    <string name="button_4row_3">3</string>
+    <string name="button_4row_4">+</string>
+    <string name="button_5row_1">+/-</string>
+    <string name="button_5row_2">0</string>
+    <string name="button_5row_3">.</string>
+    <string name="button_5row_4">=</string>
 </resources>
