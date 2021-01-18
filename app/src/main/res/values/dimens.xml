@@ -2,5 +2,6 @@
 <resources>
     <dimen name="padding">30dp</dimen>
     <dimen name="first_switch">30dp</dimen>
-    <dimen name="textViewTextSize">25sp</dimen>
+    <dimen name="textViewTextSize">50sp</dimen>
+    <dimen name="padding_textView">5dp</dimen>
 </resources>

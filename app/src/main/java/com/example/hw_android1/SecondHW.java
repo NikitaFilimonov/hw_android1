@@ -64,27 +64,26 @@ public class SecondHW extends AppCompatActivity implements View.OnClickListener,
 
 
     private void initializeViewVariables() {
-        buttonNumber0 = (Button) findViewById(R.id.button_5row_2);
-        buttonNumber1 = (Button) findViewById(R.id.button_4row_1);
-        buttonNumber2 = (Button) findViewById(R.id.button_4row_2);
-        buttonNumber3 = (Button) findViewById(R.id.button_4row_3);
-        buttonNumber4 = (Button) findViewById(R.id.button_3row_1);
-        buttonNumber5 = (Button) findViewById(R.id.button_3row_2);
-        buttonNumber6 = (Button) findViewById(R.id.button_3row_3);
-        buttonNumber7 = (Button) findViewById(R.id.button_2row_1);
-        buttonNumber8 = (Button) findViewById(R.id.button_2row_2);
-        buttonNumber9 = (Button) findViewById(R.id.button_2row_3);
+        buttonNumber0 = (Button) findViewById(R.id.button_zero);
+        buttonNumber1 = (Button) findViewById(R.id.button_one);
+        buttonNumber2 = (Button) findViewById(R.id.button_two);
+        buttonNumber3 = (Button) findViewById(R.id.button_three);
+        buttonNumber4 = (Button) findViewById(R.id.button_four);
+        buttonNumber5 = (Button) findViewById(R.id.button_five);
+        buttonNumber6 = (Button) findViewById(R.id.button_six);
+        buttonNumber7 = (Button) findViewById(R.id.button_seven);
+        buttonNumber8 = (Button) findViewById(R.id.button_eight);
+        buttonNumber9 = (Button) findViewById(R.id.button_nine);
 
-        buttonClear = (Button) findViewById(R.id.button_1row_1);
-        buttonBrackets = (Button) findViewById(R.id.button_1row_2);
-        buttonPercent = (Button) findViewById(R.id.button_1row_3);
-        buttonDivision = (Button) findViewById(R.id.button_1row_4);
-        buttonMultiplication = (Button) findViewById(R.id.button_2row_4);
-        buttonSubtraction = (Button) findViewById(R.id.button_3row_4);
-        buttonAddition = (Button) findViewById(R.id.button_4row_4);
-        buttonPlusMinus = (Button) findViewById(R.id.button_5row_1);
-        buttonDot = (Button) findViewById(R.id.button_5row_3);
-        buttonEqual = (Button) findViewById(R.id.button_5row_4);
+        buttonClear = (Button) findViewById(R.id.button_C);
+        buttonBrackets = (Button) findViewById(R.id.button_brackets);
+        buttonPercent = (Button) findViewById(R.id.button_percent);
+        buttonDivision = (Button) findViewById(R.id.button_division);
+        buttonMultiplication = (Button) findViewById(R.id.button_multiplication);
+        buttonSubtraction = (Button) findViewById(R.id.button_subtraction);
+        buttonAddition = (Button) findViewById(R.id.button_addition);
+        buttonDot = (Button) findViewById(R.id.button_dot);
+        buttonEqual = (Button) findViewById(R.id.button_equal);
         textViewNumberField = (TextView) findViewById(R.id.numberFiled);
     }
 
@@ -107,7 +106,6 @@ public class SecondHW extends AppCompatActivity implements View.OnClickListener,
         buttonMultiplication.setOnClickListener(this);
         buttonSubtraction.setOnClickListener(this);
         buttonAddition.setOnClickListener(this);
-        buttonPlusMinus.setOnClickListener(this);
         buttonDot.setOnClickListener(this);
         buttonEqual.setOnClickListener(this);
     }
@@ -132,70 +130,69 @@ public class SecondHW extends AppCompatActivity implements View.OnClickListener,
         buttonSubtraction.setOnTouchListener(this);
         buttonAddition.setOnTouchListener(this);
         buttonDot.setOnTouchListener(this);
-        buttonPlusMinus.setOnTouchListener(this);
     }
 
     @Override
     public void onClick(View view) {
         switch (view.getId()) {
-            case R.id.button_5row_2:
+            case R.id.button_zero:
                 if (addNumber("0")) equalClicked = false;
                 break;
-            case R.id.button_4row_1:
+            case R.id.button_one:
                 if (addNumber("1")) equalClicked = false;
                 break;
-            case R.id.button_4row_2:
+            case R.id.button_two:
                 if (addNumber("2")) equalClicked = false;
                 break;
-            case R.id.button_4row_3:
+            case R.id.button_three:
                 if (addNumber("3")) equalClicked = false;
                 break;
-            case R.id.button_3row_1:
+            case R.id.button_four:
                 if (addNumber("4")) equalClicked = false;
                 break;
-            case R.id.button_3row_2:
+            case R.id.button_five:
                 if (addNumber("5")) equalClicked = false;
                 break;
-            case R.id.button_3row_3:
+            case R.id.button_six:
                 if (addNumber("6")) equalClicked = false;
                 break;
-            case R.id.button_2row_1:
+            case R.id.button_seven:
                 if (addNumber("7")) equalClicked = false;
                 break;
-            case R.id.button_2row_2:
+            case R.id.button_eight:
                 if (addNumber("8")) equalClicked = false;
                 break;
-            case R.id.button_2row_3:
+            case R.id.button_nine:
                 if (addNumber("9")) equalClicked = false;
                 break;
-            case R.id.button_4row_4:
+            case R.id.button_addition:
                 if (addOperand("+")) equalClicked = false;
                 break;
-            case R.id.button_3row_4:
+            case R.id.button_subtraction:
                 if (addOperand("-")) equalClicked = false;
                 break;
-            case R.id.button_2row_4:
+            case R.id.button_multiplication:
                 if (addOperand("*")) equalClicked = false;
                 break;
-            case R.id.button_1row_4:
+            case R.id.button_division:
                 if (addOperand("/")) equalClicked = false;
                 break;
-            case R.id.button_1row_3:
+            case R.id.button_percent:
                 if (addOperand("%")) equalClicked = false;
                 break;
-            case R.id.button_5row_3:
+            case R.id.button_dot:
                 if (addDot()) equalClicked = false;
                 break;
-            case R.id.button_1row_2:
+            case R.id.button_brackets:
                 if (addBrackets()) equalClicked = false;
                 break;
-            case R.id.button_1row_1:
+            case R.id.button_C:
                 textViewNumberField.setText("");
                 openParenthesis = 0;
                 dotUsed = false;
                 equalClicked = false;
                 break;
-            case R.id.button_5row_4:
+            case R.id.button_equal:
                 if (textViewNumberField.getText().toString() != null && !textViewNumberField.getText().toString().equals(""))
                     calculate(textViewNumberField.getText().toString());
                 break;
@@ -356,7 +353,7 @@ public class SecondHW extends AppCompatActivity implements View.OnClickListener,
             } else {
                 saveLastExpression(input);
             }
-            result = temp.replaceAll("%", "/");
+            result = temp.replaceAll("%", "/100");
             BigDecimal decimal = new BigDecimal(result);
             result = decimal.setScale(8, BigDecimal.ROUND_HALF_UP).toPlainString().toString();
             equalClicked = true;
