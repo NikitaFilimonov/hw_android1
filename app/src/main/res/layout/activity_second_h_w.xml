@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_marginTop="0.5dp"
     android:orientation="vertical">
 
 
@@ -16,74 +18,84 @@
         android:textStyle="bold" />
 
     <LinearLayout
-        style="@style/linear_layout_style"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:theme="@style/linear_layout_style">
 
         <Button
             android:id="@+id/button_C"
-            style="@style/buttons_style"
-            android:layout_width="wrap_content"
+            android:layout_width="@dimen/width_0dp"
             android:layout_height="wrap_content"
+            android:layout_weight="1"
             android:text="@string/button_C"
-            android:textColor="#E87A7A" />
+            android:theme="@style/buttons_style" />
+
 
         <Button
             android:id="@+id/button_brackets"
-            style="@style/buttons_style"
-            android:layout_width="wrap_content"
+            android:layout_width="@dimen/width_0dp"
             android:layout_height="wrap_content"
-            android:text="@string/button_brackets" />
+            android:layout_weight="1"
+            android:width="@dimen/width_0dp"
+            android:text="@string/button_brackets"
+            android:textColor="#D806BC"
+            android:theme="@style/buttons_style" />
 
         <Button
             android:id="@+id/button_percent"
-            style="@style/buttons_style"
-            android:layout_width="wrap_content"
+            android:layout_width="@dimen/width_0dp"
             android:layout_height="wrap_content"
-            android:text="@string/button_percent" />
+            android:layout_weight="1"
+            android:width="@dimen/width_0dp"
+            android:text="@string/button_percent"
+            android:theme="@style/buttons_style" />
 
         <Button
             android:id="@+id/button_division"
-            style="@style/buttons_style"
-            android:layout_width="wrap_content"
+            android:layout_width="@dimen/width_0dp"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="0dp"
-            android:text="@string/button_division" />
+            android:layout_weight="1"
+            android:text="@string/button_division"
+            android:theme="@style/buttons_style" />
     </LinearLayout>
 
     <LinearLayout
-        style="@style/linear_layout_style"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:theme="@style/linear_layout_style">
 
         <Button
             android:id="@+id/button_seven"
-            style="@style/buttons_style"
-            android:layout_width="wrap_content"
+            android:layout_width="@dimen/width_0dp"
             android:layout_height="wrap_content"
-            android:text="@string/button_seven" />
+            android:layout_weight="1"
+            android:text="@string/button_seven"
+            android:theme="@style/buttons_style" />
 
         <Button
             android:id="@+id/button_eight"
-            style="@style/buttons_style"
-            android:layout_width="wrap_content"
+            android:layout_width="@dimen/width_0dp"
             android:layout_height="wrap_content"
-            android:text="@string/button_eight" />
+            android:layout_weight="1"
+            android:text="@string/button_eight"
+            android:theme="@style/buttons_style" />
 
         <Button
             android:id="@+id/button_nine"
-            style="@style/buttons_style"
-            android:layout_width="wrap_content"
+            android:layout_width="@dimen/width_0dp"
             android:layout_height="wrap_content"
-            android:text="@string/button_nine" />
+            android:layout_weight="1"
+            android:text="@string/button_nine"
+            android:theme="@style/buttons_style" />
 
         <Button
             android:id="@+id/button_multiplication"
-            style="@style/buttons_style"
-            android:layout_width="wrap_content"
+            android:layout_width="@dimen/width_0dp"
             android:layout_height="wrap_content"
             android:layout_marginEnd="0dp"
-            android:text="@string/button_multiplication" />
+            android:layout_weight="1"
+            android:text="@string/button_multiplication"
+            android:theme="@style/buttons_style" />
     </LinearLayout>
 
     <LinearLayout
@@ -93,33 +105,37 @@
 
         <Button
             android:id="@+id/button_four"
-            style="@style/buttons_style"
-            android:layout_width="wrap_content"
+            android:layout_width="@dimen/width_0dp"
             android:layout_height="wrap_content"
-            android:text="@string/button_four" />
+            android:layout_weight="1"
+            android:text="@string/button_four"
+            android:theme="@style/buttons_style" />
 
         <Button
             android:id="@+id/button_five"
-            style="@style/buttons_style"
-            android:layout_width="wrap_content"
+            android:layout_width="@dimen/width_0dp"
             android:layout_height="wrap_content"
-            android:text="@string/button_five" />
+            android:layout_weight="1"
+            android:text="@string/button_five"
+            android:theme="@style/buttons_style" />
 
         <Button
             android:id="@+id/button_six"
-            style="@style/buttons_style"
-            android:layout_width="wrap_content"
+            android:layout_width="@dimen/width_0dp"
             android:layout_height="wrap_content"
-            android:text="@string/button_six" />
+            android:layout_weight="1"
+            android:text="@string/button_six"
+            android:theme="@style/buttons_style" />
 
 
         <Button
             android:id="@+id/button_subtraction"
-            style="@style/buttons_style"
-            android:layout_width="wrap_content"
+            android:layout_width="@dimen/width_0dp"
             android:layout_height="wrap_content"
             android:layout_marginEnd="0dp"
-            android:text="@string/button_subtraction" />
+            android:layout_weight="1"
+            android:text="@string/button_subtraction"
+            android:theme="@style/buttons_style" />
     </LinearLayout>
 
     <LinearLayout
@@ -129,32 +145,36 @@
 
         <Button
             android:id="@+id/button_one"
-            style="@style/buttons_style"
-            android:layout_width="wrap_content"
+            android:layout_width="@dimen/width_0dp"
             android:layout_height="wrap_content"
-            android:text="@string/button_one"/>
+            android:layout_weight="1"
+            android:text="@string/button_one"
+            android:theme="@style/buttons_style" />
 
         <Button
             android:id="@+id/button_two"
-            style="@style/buttons_style"
-            android:layout_width="wrap_content"
+            android:layout_width="@dimen/width_0dp"
             android:layout_height="wrap_content"
-            android:text="@string/button_two" />
+            android:layout_weight="1"
+            android:text="@string/button_two"
+            android:theme="@style/buttons_style" />
 
         <Button
             android:id="@+id/button_three"
-            style="@style/buttons_style"
-            android:layout_width="wrap_content"
+            android:layout_width="@dimen/width_0dp"
             android:layout_height="wrap_content"
-            android:text="@string/button_three" />
+            android:layout_weight="1"
+            android:text="@string/button_three"
+            android:theme="@style/buttons_style" />
 
         <Button
             android:id="@+id/button_addition"
-            style="@style/buttons_style"
-            android:layout_width="wrap_content"
+            android:layout_width="@dimen/width_0dp"
             android:layout_height="wrap_content"
             android:layout_marginEnd="0dp"
-            android:text="@string/button_addition" />
+            android:layout_weight="1"
+            android:text="@string/button_addition"
+            android:theme="@style/buttons_style" />
     </LinearLayout>
 
     <LinearLayout
@@ -164,26 +184,28 @@
 
         <Button
             android:id="@+id/button_zero"
-            style="@style/buttons_style"
-            android:layout_width="wrap_content"
+            android:layout_width="@dimen/width_0dp"
             android:layout_height="wrap_content"
-            android:layout_weight="20"
-            android:text="@string/button_zero" />
+            android:layout_weight="2"
+            android:text="@string/button_zero"
+            android:theme="@style/buttons_style" />
 
         <Button
             android:id="@+id/button_dot"
-            style="@style/buttons_style"
-            android:layout_width="wrap_content"
+            android:layout_width="@dimen/width_0dp"
             android:layout_height="wrap_content"
-            android:text="@string/button_dot" />
+            android:layout_weight="1"
+            android:text="@string/button_dot"
+            android:theme="@style/buttons_style" />
 
         <Button
             android:id="@+id/button_equal"
-            style="@style/buttons_style"
-            android:layout_width="wrap_content"
+            android:layout_width="@dimen/width_0dp"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="0dp"
-            android:text="@string/button_equal" />
+            android:layout_weight="1"
+            android:text="@string/button_equal"
+
+            android:theme="@style/buttons_style" />
 
     </LinearLayout>
 

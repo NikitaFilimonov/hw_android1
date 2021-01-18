@@ -11,6 +11,9 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import java.math.BigDecimal;
 
+//import javax.script.ScriptEngine;
+//import javax.script.ScriptEngineManager;
+
 
 public class SecondHW extends AppCompatActivity implements View.OnClickListener, View.OnTouchListener {
 
@@ -52,11 +55,14 @@ public class SecondHW extends AppCompatActivity implements View.OnClickListener,
 
     TextView textViewNumberField;
 
+//    ScriptEngine scriptEngine;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_second_h_w);
+//        scriptEngine = new ScriptEngineManager().getEngineByName("rhino");
+
         initializeViewVariables();
         setOnClickListeners();
         setOnTouchListener();
@@ -347,13 +353,14 @@ public class SecondHW extends AppCompatActivity implements View.OnClickListener,
     private void calculate(String input) {
         String result = "";
         try {
-            String temp = input;
+            String in = input;
             if (equalClicked) {
-                temp = input + lastExpression;
+                in = input + lastExpression;
             } else {
                 saveLastExpression(input);
             }
-            result = temp.replaceAll("%", "/100");
+//            result = scriptEngine.eval(temp.replaceAll("%", "/100")).toString();
+////            result = temp.replaceAll("%", "/100");
             BigDecimal decimal = new BigDecimal(result);
             result = decimal.setScale(8, BigDecimal.ROUND_HALF_UP).toPlainString().toString();
             equalClicked = true;
