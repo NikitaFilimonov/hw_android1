@@ -2,5 +2,10 @@
 <resources>
     <dimen name="padding">30dp</dimen>
     <dimen name="first_switch">30dp</dimen>
-    <dimen name="textViewTextSize">25sp</dimen>
+    <dimen name="textViewTextSize">50sp</dimen>
+    <dimen name="padding_textView">5dp</dimen>
+    <dimen name="width_0dp">0dp</dimen>
+    <dimen name="radio_button_size">20sp</dimen>
+    <dimen name="linearLayoutHeight">0dp</dimen>
+    <dimen name="radioGroupHeight">0dp</dimen>
 </resources>

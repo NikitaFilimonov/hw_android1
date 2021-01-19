@@ -3,24 +3,25 @@
     <string name="strings">Hello World!</string>
     <string name="edit_text">First HW Android 1</string>
     <string name="first_hw_button">First HW Button</string>
-    <string name="button_1row_1">С</string>
-    <string name="button_1row_2">()</string>
-    <string name="button_1row_3">%</string>
-    <string name="button_1row_4">/</string>
-    <string name="button_2row_1">7</string>
-    <string name="button_2row_2">8</string>
-    <string name="button_2row_3">9</string>
-    <string name="button_2row_4">*</string>
-    <string name="button_3row_1">4</string>
-    <string name="button_3row_2">5</string>
-    <string name="button_3row_3">6</string>
-    <string name="button_3row_4">-</string>
-    <string name="button_4row_1">1</string>
-    <string name="button_4row_2">2</string>
-    <string name="button_4row_3">3</string>
-    <string name="button_4row_4">+</string>
-    <string name="button_5row_1">+/-</string>
-    <string name="button_5row_2">0</string>
-    <string name="button_5row_3">.</string>
-    <string name="button_5row_4">=</string>
+    <string name="button_C">С</string>
+    <string name="button_brackets">()</string>
+    <string name="button_percent">%</string>
+    <string name="button_division">/</string>
+    <string name="button_seven">7</string>
+    <string name="button_eight">8</string>
+    <string name="button_nine">9</string>
+    <string name="button_multiplication">*</string>
+    <string name="button_four">4</string>
+    <string name="button_five">5</string>
+    <string name="button_six">6</string>
+    <string name="button_subtraction">-</string>
+    <string name="button_one">1</string>
+    <string name="button_two">2</string>
+    <string name="button_three">3</string>
+    <string name="button_addition">+</string>
+    <string name="button_zero">0</string>
+    <string name="button_dot">.</string>
+    <string name="button_equal">=</string>
+    <string name="main_theme">Main theme</string>
+    <string name="dark_theme">Dark theme</string>
 </resources>

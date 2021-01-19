@@ -1,16 +1,22 @@
 package com.example.hw_android1;
 
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
+import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.android.material.radiobutton.MaterialRadioButton;
+
 import java.math.BigDecimal;
 
+//import javax.script.ScriptEngine;
+//import javax.script.ScriptEngineManager;
 
 public class SecondHW extends AppCompatActivity implements View.OnClickListener, View.OnTouchListener {
 
@@ -52,39 +58,50 @@ public class SecondHW extends AppCompatActivity implements View.OnClickListener,
 
     TextView textViewNumberField;
 
+    private static final String NameSharedPreference = "LOGIN";
+
+    private static final String AppTheme = "APP_THEME";
+
+    private static final int MainThemeCodeStyle = 0;
+    private static final int DarkThemeCodeStyle = 1;
+
+//    ScriptEngine scriptEngine;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setTheme(getAppTheme(R.style.Main_Theme));
         setContentView(R.layout.activity_second_h_w);
+//        scriptEngine = new ScriptEngineManager().getEngineByName("rhino");
+
         initializeViewVariables();
         setOnClickListeners();
         setOnTouchListener();
+        initThemeChooser();
     }
 
 
     private void initializeViewVariables() {
-        buttonNumber0 = (Button) findViewById(R.id.button_5row_2);
-        buttonNumber1 = (Button) findViewById(R.id.button_4row_1);
-        buttonNumber2 = (Button) findViewById(R.id.button_4row_2);
-        buttonNumber3 = (Button) findViewById(R.id.button_4row_3);
-        buttonNumber4 = (Button) findViewById(R.id.button_3row_1);
-        buttonNumber5 = (Button) findViewById(R.id.button_3row_2);
-        buttonNumber6 = (Button) findViewById(R.id.button_3row_3);
-        buttonNumber7 = (Button) findViewById(R.id.button_2row_1);
-        buttonNumber8 = (Button) findViewById(R.id.button_2row_2);
-        buttonNumber9 = (Button) findViewById(R.id.button_2row_3);
+        buttonNumber0 = (Button) findViewById(R.id.button_zero);
+        buttonNumber1 = (Button) findViewById(R.id.button_one);
+        buttonNumber2 = (Button) findViewById(R.id.button_two);
+        buttonNumber3 = (Button) findViewById(R.id.button_three);
+        buttonNumber4 = (Button) findViewById(R.id.button_four);
+        buttonNumber5 = (Button) findViewById(R.id.button_five);
+        buttonNumber6 = (Button) findViewById(R.id.button_six);
+        buttonNumber7 = (Button) findViewById(R.id.button_seven);
+        buttonNumber8 = (Button) findViewById(R.id.button_eight);
+        buttonNumber9 = (Button) findViewById(R.id.button_nine);
 
-        buttonClear = (Button) findViewById(R.id.button_1row_1);
-        buttonBrackets = (Button) findViewById(R.id.button_1row_2);
-        buttonPercent = (Button) findViewById(R.id.button_1row_3);
-        buttonDivision = (Button) findViewById(R.id.button_1row_4);
-        buttonMultiplication = (Button) findViewById(R.id.button_2row_4);
-        buttonSubtraction = (Button) findViewById(R.id.button_3row_4);
-        buttonAddition = (Button) findViewById(R.id.button_4row_4);
-        buttonPlusMinus = (Button) findViewById(R.id.button_5row_1);
-        buttonDot = (Button) findViewById(R.id.button_5row_3);
-        buttonEqual = (Button) findViewById(R.id.button_5row_4);
+        buttonClear = (Button) findViewById(R.id.button_C);
+        buttonBrackets = (Button) findViewById(R.id.button_brackets);
+        buttonPercent = (Button) findViewById(R.id.button_percent);
+        buttonDivision = (Button) findViewById(R.id.button_division);
+        buttonMultiplication = (Button) findViewById(R.id.button_multiplication);
+        buttonSubtraction = (Button) findViewById(R.id.button_subtraction);
+        buttonAddition = (Button) findViewById(R.id.button_addition);
+        buttonDot = (Button) findViewById(R.id.button_dot);
+        buttonEqual = (Button) findViewById(R.id.button_equal);
         textViewNumberField = (TextView) findViewById(R.id.numberFiled);
     }
 
@@ -107,7 +124,6 @@ public class SecondHW extends AppCompatActivity implements View.OnClickListener,
         buttonMultiplication.setOnClickListener(this);
         buttonSubtraction.setOnClickListener(this);
         buttonAddition.setOnClickListener(this);
-        buttonPlusMinus.setOnClickListener(this);
         buttonDot.setOnClickListener(this);
         buttonEqual.setOnClickListener(this);
     }
@@ -132,70 +148,69 @@ public class SecondHW extends AppCompatActivity implements View.OnClickListener,
         buttonSubtraction.setOnTouchListener(this);
         buttonAddition.setOnTouchListener(this);
         buttonDot.setOnTouchListener(this);
-        buttonPlusMinus.setOnTouchListener(this);
     }
 
     @Override
     public void onClick(View view) {
         switch (view.getId()) {
-            case R.id.button_5row_2:
+            case R.id.button_zero:
                 if (addNumber("0")) equalClicked = false;
                 break;
-            case R.id.button_4row_1:
+            case R.id.button_one:
                 if (addNumber("1")) equalClicked = false;
                 break;
-            case R.id.button_4row_2:
+            case R.id.button_two:
                 if (addNumber("2")) equalClicked = false;
                 break;
-            case R.id.button_4row_3:
+            case R.id.button_three:
                 if (addNumber("3")) equalClicked = false;
                 break;
-            case R.id.button_3row_1:
+            case R.id.button_four:
                 if (addNumber("4")) equalClicked = false;
                 break;
-            case R.id.button_3row_2:
+            case R.id.button_five:
                 if (addNumber("5")) equalClicked = false;
                 break;
-            case R.id.button_3row_3:
+            case R.id.button_six:
                 if (addNumber("6")) equalClicked = false;
                 break;
-            case R.id.button_2row_1:
+            case R.id.button_seven:
                 if (addNumber("7")) equalClicked = false;
                 break;
-            case R.id.button_2row_2:
+            case R.id.button_eight:
                 if (addNumber("8")) equalClicked = false;
                 break;
-            case R.id.button_2row_3:
+            case R.id.button_nine:
                 if (addNumber("9")) equalClicked = false;
                 break;
-            case R.id.button_4row_4:
+            case R.id.button_addition:
                 if (addOperand("+")) equalClicked = false;
                 break;
-            case R.id.button_3row_4:
+            case R.id.button_subtraction:
                 if (addOperand("-")) equalClicked = false;
                 break;
-            case R.id.button_2row_4:
+            case R.id.button_multiplication:
                 if (addOperand("*")) equalClicked = false;
                 break;
-            case R.id.button_1row_4:
+            case R.id.button_division:
                 if (addOperand("/")) equalClicked = false;
                 break;
-            case R.id.button_1row_3:
+            case R.id.button_percent:
                 if (addOperand("%")) equalClicked = false;
                 break;
-            case R.id.button_5row_3:
+            case R.id.button_dot:
                 if (addDot()) equalClicked = false;
                 break;
-            case R.id.button_1row_2:
+            case R.id.button_brackets:
                 if (addBrackets()) equalClicked = false;
                 break;
-            case R.id.button_1row_1:
+            case R.id.button_C:
                 textViewNumberField.setText("");
                 openParenthesis = 0;
                 dotUsed = false;
                 equalClicked = false;
                 break;
-            case R.id.button_5row_4:
+            case R.id.button_equal:
                 if (textViewNumberField.getText().toString() != null && !textViewNumberField.getText().toString().equals(""))
                     calculate(textViewNumberField.getText().toString());
                 break;
@@ -350,13 +365,14 @@ public class SecondHW extends AppCompatActivity implements View.OnClickListener,
     private void calculate(String input) {
         String result = "";
         try {
-            String temp = input;
+            String in = input;
             if (equalClicked) {
-                temp = input + lastExpression;
+                in = input + lastExpression;
             } else {
                 saveLastExpression(input);
             }
-            result = temp.replaceAll("%", "/");
+//            result = scriptEngine.eval(temp.replaceAll("%", "/100")).toString();
+////            result = temp.replaceAll("%", "/100");
             BigDecimal decimal = new BigDecimal(result);
             result = decimal.setScale(8, BigDecimal.ROUND_HALF_UP).toPlainString().toString();
             equalClicked = true;
@@ -439,4 +455,48 @@ public class SecondHW extends AppCompatActivity implements View.OnClickListener,
         return -1;
     }
 
+    private void initThemeChooser() {
+        initRadioButton(findViewById(R.id.radioButtonMainTheme),
+                MainThemeCodeStyle);
+        initRadioButton(findViewById(R.id.radioButtonDarkTheme),
+                DarkThemeCodeStyle);
+        RadioGroup rg = findViewById(R.id.radioButtons);
+        ((MaterialRadioButton) rg.getChildAt(getCodeStyle(MainThemeCodeStyle))).setChecked(true);
+    }
+
+    private void initRadioButton(View button, final int codeStyle) {
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                setAppTheme(codeStyle);
+                recreate();
+            }
+        });
+    }
+
+    private int getAppTheme(int codeStyle) {
+        return codeStyleToStyleId(getCodeStyle(codeStyle));
+    }
+
+    private int getCodeStyle(int codeStyle) {
+        SharedPreferences sharedPref = getSharedPreferences(NameSharedPreference, MODE_PRIVATE);
+        return sharedPref.getInt(AppTheme, codeStyle);
+    }
+
+    private void setAppTheme(int codeStyle) {
+        SharedPreferences sharedPref = getSharedPreferences(NameSharedPreference, MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPref.edit();
+        editor.putInt(AppTheme, codeStyle);
+        editor.apply();
+    }
+
+    private int codeStyleToStyleId(int codeStyle) {
+        switch (codeStyle) {
+            case DarkThemeCodeStyle:
+                return R.style.AppThemeDark;
+            default:
+                return R.style.Main_Theme;
+        }
+    }
 }
+
