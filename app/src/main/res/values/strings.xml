@@ -22,4 +22,6 @@
     <string name="button_zero">0</string>
     <string name="button_dot">.</string>
     <string name="button_equal">=</string>
+    <string name="main_theme">Main theme</string>
+    <string name="dark_theme">Dark theme</string>
 </resources>
