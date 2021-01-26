@@ -17,27 +17,13 @@
         android:textSize="@dimen/textViewTextSize"
         android:textStyle="bold" />
 
-    <RadioGroup
-        android:id="@+id/radioButtons"
-        android:layout_width="wrap_content"
-        android:layout_height="@dimen/radioGroupHeight"
-        android:layout_weight="0.5">
-
-    <com.google.android.material.radiobutton.MaterialRadioButton
-        android:id="@+id/radioButtonMainTheme"
+    <Button
+        android:id="@+id/button_settings"
+        android:textSize="@dimen/settings_button_size"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/main_theme"
-        android:textSize="@dimen/radio_button_size"/>
-
-    <com.google.android.material.radiobutton.MaterialRadioButton
-        android:id="@+id/radioButtonDarkTheme"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/dark_theme"
-        android:textSize="20sp"/>
-
-    </RadioGroup>
+        android:layout_height="@dimen/settings_button_height"
+        android:layout_weight="1"
+        android:text="@string/settings" />
 
     <LinearLayout
         android:layout_width="match_parent"

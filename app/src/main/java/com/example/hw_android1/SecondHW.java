@@ -1,17 +1,14 @@
 package com.example.hw_android1;
 
-import android.content.SharedPreferences;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
-import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
-
-import com.google.android.material.radiobutton.MaterialRadioButton;
 
 import java.math.BigDecimal;
 
@@ -58,6 +55,8 @@ public class SecondHW extends AppCompatActivity implements View.OnClickListener,
 
     TextView textViewNumberField;
 
+    Button buttonSettings;
+
     private static final String NameSharedPreference = "LOGIN";
 
     private static final String AppTheme = "APP_THEME";
@@ -70,14 +69,14 @@ public class SecondHW extends AppCompatActivity implements View.OnClickListener,
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setTheme(getAppTheme(R.style.Main_Theme));
+//        setTheme(getAppTheme(R.style.Main_Theme));
         setContentView(R.layout.activity_second_h_w);
 //        scriptEngine = new ScriptEngineManager().getEngineByName("rhino");
 
         initializeViewVariables();
         setOnClickListeners();
         setOnTouchListener();
-        initThemeChooser();
+//        initThemeChooser();
     }
 
 
@@ -103,6 +102,8 @@ public class SecondHW extends AppCompatActivity implements View.OnClickListener,
         buttonDot = (Button) findViewById(R.id.button_dot);
         buttonEqual = (Button) findViewById(R.id.button_equal);
         textViewNumberField = (TextView) findViewById(R.id.numberFiled);
+
+        buttonSettings = (Button) findViewById(R.id.button_settings);
     }
 
     private void setOnClickListeners() {
@@ -126,6 +127,8 @@ public class SecondHW extends AppCompatActivity implements View.OnClickListener,
         buttonAddition.setOnClickListener(this);
         buttonDot.setOnClickListener(this);
         buttonEqual.setOnClickListener(this);
+
+        buttonSettings.setOnClickListener(this);
     }
 
     private void setOnTouchListener() {
@@ -213,6 +216,11 @@ public class SecondHW extends AppCompatActivity implements View.OnClickListener,
             case R.id.button_equal:
                 if (textViewNumberField.getText().toString() != null && !textViewNumberField.getText().toString().equals(""))
                     calculate(textViewNumberField.getText().toString());
+                break;
+
+            case R.id.button_settings:
+                Intent runSettings = new Intent(SecondHW.this, SettingsActivity.class);
+                startActivity(runSettings);
                 break;
         }
 
@@ -455,48 +463,48 @@ public class SecondHW extends AppCompatActivity implements View.OnClickListener,
         return -1;
     }
 
-    private void initThemeChooser() {
-        initRadioButton(findViewById(R.id.radioButtonMainTheme),
-                MainThemeCodeStyle);
-        initRadioButton(findViewById(R.id.radioButtonDarkTheme),
-                DarkThemeCodeStyle);
-        RadioGroup rg = findViewById(R.id.radioButtons);
-        ((MaterialRadioButton) rg.getChildAt(getCodeStyle(MainThemeCodeStyle))).setChecked(true);
-    }
+//    private void initThemeChooser() {
+//        initRadioButton(findViewById(R.id.radioButtonMainTheme),
+//                MainThemeCodeStyle);
+//        initRadioButton(findViewById(R.id.radioButtonDarkTheme),
+//                DarkThemeCodeStyle);
+//        RadioGroup rg = findViewById(R.id.radioButtons);
+//        ((MaterialRadioButton) rg.getChildAt(getCodeStyle(MainThemeCodeStyle))).setChecked(true);
+//    }
 
-    private void initRadioButton(View button, final int codeStyle) {
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                setAppTheme(codeStyle);
-                recreate();
-            }
-        });
-    }
+//    private void initRadioButton(View button, final int codeStyle) {
+//        button.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                setAppTheme(codeStyle);
+//                recreate();
+//            }
+//        });
+//    }
 
-    private int getAppTheme(int codeStyle) {
-        return codeStyleToStyleId(getCodeStyle(codeStyle));
-    }
+//    private int getAppTheme(int codeStyle) {
+//        return codeStyleToStyleId(getCodeStyle(codeStyle));
+//    }
 
-    private int getCodeStyle(int codeStyle) {
-        SharedPreferences sharedPref = getSharedPreferences(NameSharedPreference, MODE_PRIVATE);
-        return sharedPref.getInt(AppTheme, codeStyle);
-    }
-
-    private void setAppTheme(int codeStyle) {
-        SharedPreferences sharedPref = getSharedPreferences(NameSharedPreference, MODE_PRIVATE);
-        SharedPreferences.Editor editor = sharedPref.edit();
-        editor.putInt(AppTheme, codeStyle);
-        editor.apply();
-    }
-
-    private int codeStyleToStyleId(int codeStyle) {
-        switch (codeStyle) {
-            case DarkThemeCodeStyle:
-                return R.style.AppThemeDark;
-            default:
-                return R.style.Main_Theme;
-        }
-    }
+//    private int getCodeStyle(int codeStyle) {
+//        SharedPreferences sharedPref = getSharedPreferences(NameSharedPreference, MODE_PRIVATE);
+//        return sharedPref.getInt(AppTheme, codeStyle);
+//    }
+//
+//    private void setAppTheme(int codeStyle) {
+//        SharedPreferences sharedPref = getSharedPreferences(NameSharedPreference, MODE_PRIVATE);
+//        SharedPreferences.Editor editor = sharedPref.edit();
+//        editor.putInt(AppTheme, codeStyle);
+//        editor.apply();
+//    }
+//
+//    private int codeStyleToStyleId(int codeStyle) {
+//        switch (codeStyle) {
+//            case DarkThemeCodeStyle:
+//                return R.style.AppThemeDark;
+//            default:
+//                return R.style.Main_Theme;
+//        }
+//    }
 }
 
