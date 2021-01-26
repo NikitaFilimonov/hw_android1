@@ -8,4 +8,6 @@
     <dimen name="radio_button_size">20sp</dimen>
     <dimen name="linearLayoutHeight">0dp</dimen>
     <dimen name="radioGroupHeight">0dp</dimen>
+    <dimen name="settings_button_size">15dp</dimen>
+    <dimen name="settings_button_height">5dp</dimen>
 </resources>
